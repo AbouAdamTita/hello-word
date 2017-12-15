@@ -29,3 +29,6 @@ name
 
 - Invoke the sql loader utility at OS level and start import
 	# sqlldr userid=system/oracle control=control.ctl log=track.log
+	you can also write in cmd commande 
+	# sqlldr  control=control.ctl log=track.log
+	after that sqloader ask you for conenction then you can type userid=system/oracle
