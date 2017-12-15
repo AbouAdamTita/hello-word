@@ -1,0 +1,31 @@
+- Create a table inside database which will be used for rows import from csv file
+	SQL> create table student(roll_no number(2), name varchar2(20));
+
+- Create a sample csv file at OS level on your database server
+	# mkdir -p /u02/sql_loader
+	# cd /u02/sql_loader
+	# vi load_file.csv
+
+- Put some dummy data into the csv file
+	"1","Mukesh"
+	"2","Suresh"
+	3,Rajesh
+
+- Save the .csv file and close it
+
+- Create sql loader control file with .ctl extension
+	# vi control.ctl
+	
+- Put below into the control file
+LOAD DATA
+INFILE 'load_file.csv'
+INSERT INTO TABLE student
+FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"'
+TRAILING NULLCOLS
+(
+roll_no,
+name
+)
+
+- Invoke the sql loader utility at OS level and start import
+	# sqlldr userid=system/oracle control=control.ctl log=track.log
