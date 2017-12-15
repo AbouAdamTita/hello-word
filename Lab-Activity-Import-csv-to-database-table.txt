@@ -26,7 +26,7 @@ TRAILING NULLCOLS
 roll_no,
 name
 )
-
+--my test for test1
 - Invoke the sql loader utility at OS level and start import
 	# sqlldr userid=system/oracle control=control.ctl log=track.log
 	you can also write in cmd commande 
